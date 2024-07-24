@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const poppingImagesContainer = document.getElementById('popping-images-container');
-    const imageSrc = 'images/drunko.jpg'; // Path to your image
+    const imageSrc = 'images/king cat.jpg'; // Path to your image
 
     function createPoppingImage() {
         const img = document.createElement('img');
