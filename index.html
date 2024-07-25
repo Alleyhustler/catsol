@@ -3,59 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spider Vision Webpage</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Simple HTML Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Shadows Into Light', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .background-image {
+            background-image: url('images/1.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .icons a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .icons img {
+            width: 40px; /* Adjust the size as needed */
+            height: 40px; /* Adjust the size as needed */
+        }
+
+        .centered-text {
+            font-size: 10em;
+            text-shadow: 2px 2px 4px #000000;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: pop-in 2s ease-out forwards;
+        }
+
+        @keyframes pop-in {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Social Media Icons -->
-    <div class="socials">
-        <a href="https://t.me/+5ZxZVi62ekEyYTVk" target="_blank" rel="noopener noreferrer">
-            <img src="images/telegram.png" alt="Telegram">
-        </a>
-        <a href="https://x.com/catarantula_sol" target="_blank" rel="noopener noreferrer">
-            <img src="images/twitter.png" alt="Twitter">
-        </a>
+    <div class="background-image">
+        <div class="icons">
+            <a href="https://x.com/Purrjet_solana" target="_blank">
+                <img src="images/x-logo-twitter-elon-musk_dezeen_2364_col_0.webp" alt="Twitter">
+            </a>
+            <a href="https://t.me/+VmwF2YZ9TmA4N2I0" target="_blank">
+                <img src="images/telegram-icon-2048x2048-x902pktl.png" alt="Telegram">
+            </a>
+            <a href="https://t.me/+VmwF2YZ9TmA4N2I0" target="_blank">
+                <img src="images/image-removebg-preview (17).png" alt="Pumpfun">
+            </a>
+        </div>
+        <div class="centered-text">
+            <p>PurrJet</p>
+        </div>
     </div>
-
-    <div class="background-image"></div>
-    <div class="hex-grid">
-        <!-- Hexagons will be generated here by JavaScript -->
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const hexGrid = document.querySelector(".hex-grid");
-
-            // Hexagon dimensions
-            const hexRadius = 60; // Radius of hexagon
-            const hexWidth = Math.sqrt(3) * hexRadius;
-            const hexHeight = 2 * hexRadius;
-            const hexVertDist = hexHeight * 0.75;
-            const hexHorDist = hexWidth;
-
-            const rows = Math.ceil(window.innerHeight / hexVertDist) + 1;
-            const cols = Math.ceil(window.innerWidth / hexHorDist) + 1;
-
-            for (let row = 0; row < rows; row++) {
-                for (let col = 0; col < cols; col++) {
-                    const hex = document.createElement("div");
-                    hex.className = "hex";
-                    hex.style.left = `${col * hexHorDist * 0.75}px`;
-                    hex.style.top = `${row * hexVertDist}px`;
-
-                    if (col % 2 === 1) {
-                        hex.style.top = `${row * hexVertDist + (hexVertDist / 2)}px`;
-                    }
-
-                    hex.innerHTML = `
-                        <div class="hex-in">
-                            <div class="hex-content"></div>
-                        </div>
-                    `;
-                    hexGrid.appendChild(hex);
-                }
-            }
-        });
-    </script>
 </body>
 </html>
